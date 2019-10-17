@@ -31,4 +31,24 @@ describe('Form', () => {
     expect(wrapper.instance().resetInputs).toHaveBeenCalled();
   });
 
-  
+  it('should run submitReservation when the button is clicked', () => {
+    wrapper.instance().submitNewReservation = jest.fn();
+    wrapper.instance().forceUpdate();
+    const mockEvent = { preventDefault: jest.fn() };
+
+    wrapper.find('button').simulate('click', mockEvent);
+
+    expect(wrapper.instance().submitNewReservation).toHaveBeenCalled();
+  });
+
+    // it('should reset state when resetInputs is called', () => {
+  //   const expected = { name: '', date: '', time: '', number: null };
+
+  //   wrapper.instance().setState({ 
+  //     name: 'doggo', date: '2020/05/02', time: '8:00', number: 3
+  //   });
+    
+  //   wrapper.instance().resetInputs();
+
+  //   expect(wrapper.state()).toEqual(expected);
+  // });
