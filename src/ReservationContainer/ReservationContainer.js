@@ -3,7 +3,6 @@ import ReservationCards from '../ReservationCards/ReservationCards';
 import './ReservationContainer.css'
 
 const ReservationContainer= ({reservations, removeReservation}) => {
-  console.log('res', reservations)
   
   const reservationCards = reservations.map(res => {
     return <ReservationCards

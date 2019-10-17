@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Form.css'
 
 export default class Form extends Component {
   constructor() {
@@ -14,7 +15,6 @@ export default class Form extends Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value})
-    console.log('handle change firing', this.state)
   }
 
   submitNewReservation = e => {

@@ -1,11 +1,13 @@
 .cards {
   background: white;
   border: 2px solid teal;
+  width: 175px;
 }
 
 button {
   background-color: teal;
   color: white;
+  height: 5vh;
 }
 
 .cancel__btn {

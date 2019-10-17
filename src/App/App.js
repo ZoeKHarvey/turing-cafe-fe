@@ -24,7 +24,6 @@ class App extends Component {
   }
 
   addReservation = newReservation => {
-    console.log('res firing', newReservation)
     postReservation(newReservation)
       .then(res => this.setState({
         reservations: [...this.state.reservations, res]
@@ -33,13 +32,11 @@ class App extends Component {
   }
 
   removeReservation = id => {
-    console.log('delete firing', id)
     deleteReservation(id)
       .then(response => this.setState({ response }))
   }
 
   render() {
-    {console.log(this.state)}
     const { reservations, isLoading } = this.state;
     return (
       <div className="App">

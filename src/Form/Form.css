@@ -1,0 +1,10 @@
+form {
+  display: flex;
+  align-items: center
+}
+
+input {
+  height: 5vh;
+  font-size: 1.1em;
+  margin-right: 2%;
+}

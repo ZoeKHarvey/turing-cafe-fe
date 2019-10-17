@@ -10,7 +10,6 @@ export const getReservations = () => {
 }
 
 export const postReservation = (newReservation) => {
-  console.log('NEW RES --->', newReservation)
   const options = {
     method: 'POST',
     body: JSON.stringify(newReservation),
