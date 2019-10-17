@@ -16,7 +16,7 @@ export default class Form extends Component {
     console.log('handle change firing', this.state)
   }
 
-  submitNewIdea = e => {
+  submitNewReservation = e => {
     e.preventDefault();
     const { addReservation } = this.props;
     const newReservation = { ...this.state, id: Date.now()};
@@ -65,7 +65,7 @@ export default class Form extends Component {
           onChange={this.handleChange}
         />
         <button 
-          onClick={this.submitNewIdea}
+          onClick={this.submitNewReservation}
         >
           Submit!
         </button>

@@ -24,4 +24,11 @@ describe('Form', () => {
     expect(wrapper.state('name')).toEqual(expected);
   });
 
-});
+  it('should call resetInputs when submitNewReservation is called', () => {
+    wrapper.instance().resetInputs = jest.fn();
+    wrapper.instance().submitNewReservation({ preventDefault: jest.fn() });
+
+    expect(wrapper.instance().resetInputs).toHaveBeenCalled();
+  });
+
+  
