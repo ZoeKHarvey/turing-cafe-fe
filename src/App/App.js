@@ -48,23 +48,3 @@ class App extends Component {
 
 export default App;
 
-
-// render() {
-//   const { ideas, isLoading, error } = this.state;
-//   return (
-//     <main className="App">
-//       <h1>IdeaBox</h1>
-//       <Form addIdea={this.addIdea} />
-//       {isLoading && <img
-//         src={'https://www.gearbubble.com/assets/loader_large.gif'}
-//         alt={''}
-//       />
-//       }
-//       {error && <h2>{error}</h2>}
-//       <Ideas
-//         ideas={ideas}
-//         removeIdea={this.removeIdea}
-//       />
-//     </main>
-//   )
-// }
