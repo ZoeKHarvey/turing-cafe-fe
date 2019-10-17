@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getReservations, postReservations, deleteReservations} from '../apiCalls';
-import ReservationContainer from '../ReservationContainer/ReservationContainer'
+import { getReservations, postReservation, deleteReservation} from '../apiCalls';
+import ReservationContainer from '../ReservationContainer/ReservationContainer';
+import Form from '../Form/Form'
 
 class App extends Component {
   constructor() {
@@ -22,17 +23,30 @@ class App extends Component {
     );  
   }
 
+  addReservation = newReservation => {
+    postReservation(newReservation)
+      .then(res => this.setState({
+        reservations: [...this.state.reservations, res]
+      }))
+      .catch(error => this.setState({ error: error.message }))
+  }
+
+  removeReservation = id => {
+    deleteReservation(id)
+      .then(response => this.setState({ response }))
+  }
 
   render() {
-    {console.log(this.state)}
-    const { reservations, isLoading } = this.state;
+    const { reservations } = this.state;
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
+          <Form addReservation={this.addReservation}
+          />
         </div>
         <div className='resy-container'>
-          <ReservationContainer reservations={reservations}/>
+          <ReservationContainer reservations={reservations} removeReservation={this.removeReservation}/>
         </div>
       </div>
     )
@@ -41,23 +55,3 @@ class App extends Component {
 
 export default App;
 
-
-// render() {
-//   const { ideas, isLoading, error } = this.state;
-//   return (
-//     <main className="App">
-//       <h1>IdeaBox</h1>
-//       <Form addIdea={this.addIdea} />
-//       {isLoading && <img
-//         src={'https://www.gearbubble.com/assets/loader_large.gif'}
-//         alt={''}
-//       />
-//       }
-//       {error && <h2>{error}</h2>}
-//       <Ideas
-//         ideas={ideas}
-//         removeIdea={this.removeIdea}
-//       />
-//     </main>
-//   )
-// }

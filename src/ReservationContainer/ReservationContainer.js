@@ -1,9 +1,9 @@
 import React from 'react';
-import ReservationCards from '../ReservationCards/ReservationCards'
+import ReservationCards from '../ReservationCards/ReservationCards';
+import './ReservationContainer.css'
 
-const ReservationContainer= ({reservations}) => {
-  console.log('res', reservations)
-  // const favoriteClass = isFavorite ? 'favorite' : 'card'
+const ReservationContainer= ({reservations, removeReservation}) => {
+  
   const reservationCards = reservations.map(res => {
     return <ReservationCards
       id={res.id}
@@ -11,16 +11,15 @@ const ReservationContainer= ({reservations}) => {
       date={res.date}
       time={res.time}
       numGuests={res.number}
+      removeReservation={removeReservation}
       key={res.id}
     />
   })
   return (
-    <section>
+    <section className='container'>
      {reservationCards}
     </section>
   )
-
-
 }
 
 export default ReservationContainer;
