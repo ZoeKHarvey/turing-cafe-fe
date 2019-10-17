@@ -1,0 +1,13 @@
+.cards {
+  background: white;
+  border: 2px solid teal;
+}
+
+button {
+  background-color: teal;
+  color: white;
+}
+
+.cancel__btn {
+  width: 100%;
+}

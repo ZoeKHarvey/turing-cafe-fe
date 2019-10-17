@@ -26,7 +26,8 @@ describe('App', () => {
   it('should update state when addReservation is called', async () => {
     const wrapper = shallow(<App />);
     const mockReservation = { name: 'a name', date: '2020/02/02', time: '4:00', number: 4 };
-    const expected = [...mockReservation, mockReservation];
+    const mockReservations= [{name: 'another name', date: '2020/03/03', time: '5:00', number: 5}]
+    const expected = [...mockReservations, mockReservation];
 
     expect(wrapper.state('reservations')).toEqual([]);
 

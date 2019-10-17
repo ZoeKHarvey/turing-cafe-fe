@@ -7,7 +7,8 @@ export default class Form extends Component {
       name: '',
       date: '',
       time: '',
-      number: null
+      number: null,
+      id: null,
     }
   }
 
@@ -30,6 +31,7 @@ export default class Form extends Component {
       date: '',
       time: '',
       number: null,
+      id: null,
     })
   }
 

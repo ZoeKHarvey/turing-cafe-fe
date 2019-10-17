@@ -24,12 +24,18 @@ class App extends Component {
   }
 
   addReservation = newReservation => {
-    console.log('res firing')
+    console.log('res firing', newReservation)
     postReservation(newReservation)
       .then(res => this.setState({
         reservations: [...this.state.reservations, res]
       }))
       .catch(error => this.setState({ error: error.message }))
+  }
+
+  removeReservation = id => {
+    console.log('delete firing', id)
+    deleteReservation(id)
+      .then(response => this.setState({ response }))
   }
 
   render() {
@@ -43,7 +49,7 @@ class App extends Component {
           />
         </div>
         <div className='resy-container'>
-          <ReservationContainer reservations={reservations}/>
+          <ReservationContainer reservations={reservations} removeReservation={this.removeReservation}/>
         </div>
       </div>
     )
