@@ -6,13 +6,14 @@ export default class Form extends Component {
     this.state = {
       name: '',
       date: '',
-      title: '',
+      time: '',
       numGuests: null
     }
   }
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value})
+    console.log('handle change firing', this.state)
   }
 
   submitNewIdea = e => {
@@ -39,7 +40,7 @@ export default class Form extends Component {
           type='text'
           placeholder='Name'
           value={this.state.name}
-          name='title'
+          name='name'
           onChange={this.handleChange}
         />
         <input
@@ -60,7 +61,7 @@ export default class Form extends Component {
           type='number'
           placeholder='Number of Guests'
           value={this.state.number}
-          name='date'
+          name='number'
           onChange={this.handleChange}
         />
         <button 

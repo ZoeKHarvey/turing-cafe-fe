@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getReservations, postReservation, deleteReservation} from '../apiCalls';
-import ReservationContainer from '../ReservationContainer/ReservationContainer'
+import ReservationContainer from '../ReservationContainer/ReservationContainer';
+import Form from '../Form/Form'
 
 class App extends Component {
   constructor() {
@@ -23,6 +24,7 @@ class App extends Component {
   }
 
   addReservation = newReservation => {
+    console.log('res firing')
     postReservation(newReservation)
       .then(res => this.setState({
         reservations: [...this.state.reservations, res]
@@ -37,6 +39,8 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
+          <Form addReservation={this.addReservation}
+          />
         </div>
         <div className='resy-container'>
           <ReservationContainer reservations={reservations}/>
