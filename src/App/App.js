@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   render() {
-    const { reservations, isLoading } = this.state;
+    const { reservations } = this.state;
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>

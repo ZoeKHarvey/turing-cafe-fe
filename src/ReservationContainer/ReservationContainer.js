@@ -20,8 +20,6 @@ const ReservationContainer= ({reservations, removeReservation}) => {
      {reservationCards}
     </section>
   )
-
-
 }
 
 export default ReservationContainer;
