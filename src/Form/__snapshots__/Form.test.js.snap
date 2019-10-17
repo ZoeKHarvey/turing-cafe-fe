@@ -28,6 +28,7 @@ exports[`Form should match snapshot 1`] = `
     onChange={[Function]}
     placeholder="Number of Guests"
     type="number"
+    value={null}
   />
   <button
     onClick={[Function]}

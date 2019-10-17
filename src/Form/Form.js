@@ -7,7 +7,7 @@ export default class Form extends Component {
       name: '',
       date: '',
       time: '',
-      numGuests: null
+      number: null
     }
   }
 
@@ -28,8 +28,8 @@ export default class Form extends Component {
     this.setState({ 
       name: '',
       date: '',
-      title: '',
-      numGuests: null,
+      time: '',
+      number: null,
     })
   }
 

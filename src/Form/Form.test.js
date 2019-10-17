@@ -24,6 +24,18 @@ describe('Form', () => {
     expect(wrapper.state('name')).toEqual(expected);
   });
 
+  it('should reset state when resetInputs is called', () => {
+    const expected = { name: '', date: '', time: '', number: null };
+
+    wrapper.instance().setState({ 
+      name: 'doggo', date: '2020/05/02', time: '8:00', number: 3
+    });
+    
+    wrapper.instance().resetInputs();
+
+    expect(wrapper.state()).toEqual(expected);
+  });
+
   it('should call resetInputs when submitNewReservation is called', () => {
     wrapper.instance().resetInputs = jest.fn();
     wrapper.instance().submitNewReservation({ preventDefault: jest.fn() });
@@ -40,15 +52,4 @@ describe('Form', () => {
 
     expect(wrapper.instance().submitNewReservation).toHaveBeenCalled();
   });
-
-    // it('should reset state when resetInputs is called', () => {
-  //   const expected = { name: '', date: '', time: '', number: null };
-
-  //   wrapper.instance().setState({ 
-  //     name: 'doggo', date: '2020/05/02', time: '8:00', number: 3
-  //   });
-    
-  //   wrapper.instance().resetInputs();
-
-  //   expect(wrapper.state()).toEqual(expected);
-  // });
+});
