@@ -6,11 +6,12 @@ const ReservationContainer= ({reservations}) => {
   // const favoriteClass = isFavorite ? 'favorite' : 'card'
   const reservationCards = reservations.map(res => {
     return <ReservationCards
+      id={res.id}
       name={res.name}
       date={res.date}
       time={res.time}
-      numGuests={res.numberOfGuests}
-     
+      numGuests={res.number}
+      key={res.id}
     />
   })
   return (

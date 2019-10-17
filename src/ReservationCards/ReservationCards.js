@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReservationCards= ({ name, date, time, numGuests,}) => {
+const ReservationCards= ({ id, name, date, time, numGuests,}) => {
   console.log(name, date, time, numGuests)
   // const favoriteClass = isFavorite ? 'favorite' : 'card'
   return (
